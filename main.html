@@ -3,7 +3,6 @@
 <body>
 	<canvas id="canvas"></canvas>
 	<script>
-
 		var max_width = window.innerWidth, max_hight = window.innerHeight, NumOfPoints = 25;//initial the max width, hight and num of points in main page
 		
 		var canvas = document.getElementById('canvas');//get the object
@@ -54,13 +53,18 @@
 			cxt.stroke();
 
 		}
-
+		function resize(){
+			canvas.width = window.innerWidth,//set the max width
+			canvas.height = window.innerHeight;//set the max hight
+			context.fillStyle = 'rgba(0,0,0,0.2)';
+		}
 		function origin() {//creates origin for each new pinte in html, and limit the number of points that will be generated in html
 			circleList = [];
 			for (var i = 0; i < NumOfPoints; i++) {//counts down the number of the points that have been drawn
 				circleList.push(drawCricle(context, random_Num(max_width), random_Num(max_hight), random_Num(15, 2), random_Num(10, -10)/40, random_Num(10, -10)/40));
 			}
 			draw();
+			resize();
 		}
 
 
@@ -107,13 +111,16 @@
 		<ul id="nav">
 			<li>&nbsp&nbsp&nbsp</li>
 			<li>ZHI HU 2.0</li>
-			<li id="searchbar"><input id="bar" type="text" placeholder="Search for Topic, Question or Answer..."><button class="button">Search</button></li>
-  			<li><a href="default.asp">Home</a></li>
+			<li id="searchbar">
+				<input id="bar" type="text" placeholder="Search for Topic, Question or Answer..."></input><button href="login.html" class="button" type="button">Search</button>
+			</li>
+  			<li><a href="main.html">Home</a></li>
   			<li><a href="news.asp">News</a></li>
   			<li><a href="contact.asp">Contact</a></li>
   			<li><a href="login.html">Login</a></li>
 		</ul>
 	</br></br>
+
 	<div class="head">
 	</br>
 	</br>
