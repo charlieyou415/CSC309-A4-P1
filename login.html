@@ -6,9 +6,9 @@
 
 
 	</head>
+		<canvas id="canvas"></canvas>
 
 	<body>
-		<canvas id="canvas"></canvas>
 		<div class="main">
 			<div class="logo">Our Logo!</div>
 
@@ -29,9 +29,18 @@
 		<script>
 
 		var max_width = window.innerWidth, max_hight = window.innerHeight, NumOfPoints = 25;//initial the max width, hight and num of points in main page
-		
+
+		window.addEventListener('resize', function(){
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			max_width = window.innerWidth;
+			max_height = window.innerHeight;
+					context.fillStyle = 'rgba(0,0,0,0.2)';//fill the color into the point
+
+		}, true)
+
 		var canvas = document.getElementById('canvas');//get the object
-		canvas.width = max_width,//set the max width
+		canvas.width = max_width;//set the max width
 		canvas.height = max_hight;//set the max hight
 		var context = canvas.getContext('2d');
 		context.strokeStyle = 'rgba(0,0,0,0.5)',//initial the stroke style
