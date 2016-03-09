@@ -11,7 +11,14 @@ h1{   background-color: blue;
     border: 2px solid #C0C0C0;
 
 }
+#canvas{
+  position:fixed;
+  top: 0;
+  left: 0;
 
+  z-index: -1;
+  background: rgb(247,250,252);
+}
 .divcss5-F00{ border-bottom:2.5px solid #66ccff} 
 
 h1 a:link { color: white; }
